@@ -18,7 +18,7 @@
             'page': ko.observable(0),
             'no_of_pages': ko.observable(0),
             'reviews': ko.observable([]),
-            'pages': ko.observable([])
+            'pages': ko.observable([]),
             'business_info': ko.observable({
               'business_address': '',
               'business_name': '',
