@@ -10,10 +10,10 @@
     </head>
     <body>
        <div class="container">
-       <h1 data-bind="text: business_info.business_name"></h1>
+       <h1 data-bind="text: business_name"></h1>
           <div class="row">
-            <div class="col-md-6" data-bind="html: business_info.business_address"></div>
-            <div class="col-md-6" data-bind="html: business_info.business_phone"></div> 
+            <div class="col-md-6"><h3 data-bind="html: business_address"></h3</div>
+            <div class="col-md-6"><h3 data-bind="html: business_phone"></h3></div> 
           </div>
        <div data-bind="foreach: reviews">
            <div class="row">
