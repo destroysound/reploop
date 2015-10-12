@@ -8,6 +8,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
         <script type="text/javascript">
+                var boundData = {};
                 function getPage(page) {
                     $.get("/api", {'page': page}, function (data) {
                         data.page = page;
@@ -28,11 +29,12 @@
                             }
                             return arr;
                         });
-                        ko.applyBindings(data);
+                        boundData = data;
                     });
                 }
             $(function () {
                 getPage(0);
+                ko.applyBindings(boundData);
             });
         </script>
     </head>
