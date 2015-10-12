@@ -58,7 +58,7 @@
            </div>
        </div>
        <ul class="pagination" data-bind="foreach: pages">
-           <li data-bind="text: $data+1, click: function (data) { getPage($data+1) }"></li>
+           <li data-bind="text: $data+1, click: function (data) { getPage($data) }"></li>
        </ul>
        </div>
     </body>
