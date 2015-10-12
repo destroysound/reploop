@@ -54,7 +54,7 @@
                 <div class="col-md-4" data-bind="text: date_of_submission"></div>
            </div>
            <div class="row">
-                <div class="col-md-12" data-bind="text: $('<textarea /').html(description).text()"></div>
+                <div class="col-md-12" data-bind="text: $('<textarea />').html(description).text()"></div>
            </div>
        </div>
        <ul class="pagination" data-bind="foreach: pages">
