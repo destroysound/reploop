@@ -9,10 +9,14 @@
         <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
         <script type="text/javascript">
             $(function () {
-                $.get("/api", function (data) {
+                function getPage(page) {
+                $.get("/api", {'page': page}, function (data) {
+                    data.page = page;
+                    data.no_of_pages = ceil(data.business_info.total_rating.total_noof_reviews/10)
                     console.log(data);
                     ko.applyBindings(data);
                 });
+                }
             });
         </script>
     </head>
@@ -31,6 +35,9 @@
                 <div class="col-md-12" data-bind="text: description"></div>
            </div>
        </div>
+       <ul class-"pagination" data-bind="foreach: new Array(no_of_pages)">
+           <li data-bind="text: $index()+1"></li>
+       </ul>
        </div>
     </body>
 </html>
