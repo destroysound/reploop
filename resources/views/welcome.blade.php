@@ -11,13 +11,14 @@
             $(function () {
                 $.get("/api", function (data) {
                     console.log(data);
+                    ko.applyBindings(data);
                 });
             });
         </script>
     </head>
     <body>
        <div class="container">
-       <div data-bind="foreach: review">
+       <div data-bind="foreach: reviews">
            <div class="row">
                 <div class="col-md-4">Customer Name:</div>
                 <div class="col-md-4" data-bind="text: customer_name"></div>
