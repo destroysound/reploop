@@ -57,9 +57,11 @@
                 <div class="col-md-12" data-bind="text: $('<textarea />').html(description).text()"></div>
            </div>
        </div>
+       <nav>
        <ul class="pagination" data-bind="foreach: pages">
            <li data-bind="text: $data+1, click: function (data) { getPage($data) }"></li>
        </ul>
+       </nav>
        </div>
     </body>
 </html>
