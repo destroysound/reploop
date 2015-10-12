@@ -26,8 +26,8 @@
                   begin_page = 0;
                 }
                 end_page = begin_page + 6;
-                if (end_page > no_of_pages) {
-                  end_page = no_of_pages;
+                if (end_page > data.no_of_pages) {
+                  end_page = data.no_of_pages;
                 }
                 var arr = [];
                 for (var i = begin_page; i < end_page; i++) {
