@@ -3,63 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">          <title>Reputation Loop API Consumer</title>
-
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-          var boundData = {
-            'page': ko.observable(0),
-            'no_of_pages': ko.observable(0),
-            'reviews': ko.observable([]),
-            'pages': ko.observable([]),
-            'business_info': ko.observable({
-              'business_address': '',
-              'business_name': '',
-              'business_phone': '',
-              'external_page_url': '',
-              'external_url': '',
-              'total_rating': {
-                'total_avg_rating': ''
-              }
-            })
-          };
-          boundData.paginator = function(page, no_of_pages) {
-	  };
-          function getPage(page) {
-            $.get("/api", {'page': page}, function (data) {
-                boundData.page(page);
-                boundData.business_info(data.business_info);
-                boundData.no_of_pages(Math.ceil(data.business_info.total_rating.total_no_of_reviews/10));
-                boundData.reviews(data.reviews);
-                var begin_page = page - 3;
-                if (begin_page < 0) {
-                  begin_page = 0;
-                }
-                end_page = begin_page + 6;
-                if (end_page > boundData.no_of_pages()) {
-                  end_page = boundData.no_of_pages();
-                }
-                var arr = [];
-                for (var i = begin_page; i < end_page; i++) {
-                  arr.push(i);
-                }
-                boundData.pages(arr);
-	    });
-          }
-          $(function () {
-            getPage(0);
-            ko.applyBindings(boundData);
-          });
-        </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reputation Loop API Consumer</title>
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
        <h1 data-bind="text: business_info.business_name"></h1>
@@ -89,5 +36,10 @@
        </ul>
        </nav>
        </div>
+       <!-- scripts go at bottom of page -->
+       <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+       <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
+       <script src="/js/bootstrap.min.js"></script>
+       <script src="/js/reploop.js"></script>
     </body>
 </html>
