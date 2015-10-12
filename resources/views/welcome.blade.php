@@ -51,7 +51,7 @@
                 <div class="col-md-12" data-bind="text: description"></div>
            </div>
        </div>
-       <ul class-"pagination" data-bind="foreach: paginator">
+       <ul class="pagination" data-bind="foreach: paginator">
            <li data-bind="text: $index()+1"></li>
        </ul>
        </div>
