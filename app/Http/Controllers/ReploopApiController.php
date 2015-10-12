@@ -21,7 +21,7 @@ class ReploopApiController extends Controller
        $res = $client->request('GET', 'http://test.localfeedbackloop.com/api?apiKey=61067f81f8cf7e4a1f673cd230216112&noOfReviews=10&internal=1&yelp=1&google=1&offset='.$offset.'&threshold=1', []); 
        $results = json_decode($res->getBody());
        $results['business_info']['total_rating']['no_of_pages'] =
-           ceil($results['business_info']['total_rating']['no_of_reviews'] / 10)
+           ceil($results['business_info']['total_rating']['no_of_reviews'] / 10);
        return response()->json($results);
     }
 
