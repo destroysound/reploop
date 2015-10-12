@@ -7,6 +7,11 @@
     <title>Reputation Loop API Consumer</title>
     <!-- Bootstrap -->
     <link href="/css/app.css" rel="stylesheet">
+    <style>
+      .customer-description {
+        margin-bottom: 5px;
+      }
+    </style>
     </head>
     <body>
        <div class="container">
@@ -26,7 +31,7 @@
                 <div class="col-md-4">Date of Submission:</div>
                 <div class="col-md-4" data-bind="text: date_of_submission"></div>
            </div>
-           <div class="row">
+           <div class="row customer-description">
                 <div class="col-md-12" data-bind="html: description"></div>
            </div>
        </div>
