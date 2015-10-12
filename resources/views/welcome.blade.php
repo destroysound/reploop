@@ -56,7 +56,7 @@
                 <div class="col-md-12" data-bind="text: description"></div>
            </div>
        </div>
-       <ul class="pagination" data-bind="foreach: $root.paginator($root.page, $root.no_of_pages)">
+       <ul class="pagination" data-bind="foreach: $root.paginator($root.page(), $root.no_of_pages())">
            <li data-bind="text: $index()+1, click: function (data) { getPage($index+1) }"></li>
        </ul>
        </div>
