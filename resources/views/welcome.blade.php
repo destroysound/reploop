@@ -11,6 +11,10 @@
       .customer-description {
         margin-bottom: 5px;
       }
+      .customer-name {
+        font-weight: bold;
+        text-decoration: none;
+      }
     </style>
     </head>
     <body>
@@ -24,12 +28,13 @@
        <div class="container">
        <div data-bind="foreach: reviews">
            <div class="row">
-                <div class="col-md-4">Customer Name:</div>
-                <div class="col-md-4" data-bind="text: customer_name"></div>
-           </div>
-           <div class="row">
-                <div class="col-md-4">Date of Submission:</div>
-                <div class="col-md-4" data-bind="text: date_of_submission"></div>
+                <div class="col-md-10 customer-name">
+                <a data-bind="attr: { href: customer_url}, text: customer_name"></a>
+                (<span data-bind="text: date_of_submission"></span>)
+                </div>
+                <div class="col-md-2">
+                  <img src="/img/star.png" data-bind="foreach: new Array(parseInt(rating))" />
+                </div>
            </div>
            <div class="row customer-description">
                 <div class="col-md-12" data-bind="html: description"></div>
