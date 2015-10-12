@@ -13,7 +13,7 @@
             'no_of_pages': 0,
             'reviews': []
           };
-          boundData.paginator = ko.computed(function(page, no_of_pages) {
+          boundData.paginator = function(page, no_of_pages) {
 	    var begin_page = page - 3;
 	    if (begin_page < 0) {
 		begin_page = 0;
@@ -27,7 +27,7 @@
 		arr.push(i);
 	    }
 	    return arr;
-	  });
+	  };
           function getPage(page) {
 	    $.get("/api", {'page': page}, function (data) {
                 boundData.page = page;
