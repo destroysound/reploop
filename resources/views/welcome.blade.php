@@ -12,7 +12,7 @@
        <div class="container">
        <h1 data-bind="text: business_name"></h1>
           <div class="row">
-            <div class="col-md-6"><h3 data-bind="html: business_address"></h3</div>
+            <div class="col-md-6"><h3 data-bind="html: business_address"></h3></div>
             <div class="col-md-6"><h3 data-bind="html: business_phone"></h3></div> 
           </div>
        </div>
