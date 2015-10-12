@@ -10,16 +10,17 @@
         <script type="text/javascript">
           var boundData = {
             'page': 0,
+            'no_of_pages': 0,
             'reviews': []
           };
-          boundData.paginator = ko.computed(function() {
+          boundData.paginator = ko.computed(function(page, no_of_pages) {
 	    var begin_page = page - 3;
 	    if (begin_page < 0) {
 		begin_page = 0;
 	    }
 	    end_page = begin_page + 6;
-	    if (end_page > data.no_of_pages) {
-		end_page = data.no_of_pages;
+	    if (end_page > no_of_pages) {
+		end_page = no_of_pages;
 	    }
 	    var arr = [];
 	    for (var i = begin_page; i < end_page; i++) {
@@ -55,7 +56,7 @@
                 <div class="col-md-12" data-bind="text: description"></div>
            </div>
        </div>
-       <ul class="pagination" data-bind="foreach: paginator">
+       <ul class="pagination" data-bind="foreach: paginator(page, no_of_pages)">
            <li data-bind="text: $index()+1, click: function (data) { getPage($index+1) }"></li>
        </ul>
        </div>
