@@ -12,7 +12,7 @@
             'page': ko.observable(0),
             'no_of_pages': ko.observable(0),
             'reviews': ko.observable([]),
-            'paginator': []
+            'paginator': function () { return []; }
           };
           function getPage(page) {
 	    $.get("/api", {'page': page}, function (data) {
