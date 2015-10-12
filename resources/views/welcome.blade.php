@@ -10,13 +10,14 @@
         <script type="text/javascript">
             $(function () {
                 function getPage(page) {
-                $.get("/api", {'page': page}, function (data) {
-                    data.page = page;
-                    data.no_of_pages = ceil(data.business_info.total_rating.total_noof_reviews/10)
-                    console.log(data);
-                    ko.applyBindings(data);
-                });
+                    $.get("/api", {'page': page}, function (data) {
+                        data.page = page;
+                        data.no_of_pages = ceil(data.business_info.total_rating.total_noof_reviews/10)
+                        console.log(data);
+                        ko.applyBindings(data);
+                    });
                 }
+                getPage(0);
             });
         </script>
     </head>
