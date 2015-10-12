@@ -11,8 +11,14 @@
           var boundData = {
             'page': ko.observable(0),
             'no_of_pages': ko.observable(0),
-            'reviews': ko.observable([])
+            'reviews': ko.observable([]),
+            'paginator': []
           };
+          function getPage(page) {
+	    $.get("/api", {'page': page}, function (data) {
+                boundData.page(page);
+                boundData.no_of_pages(Math.ceil(data.business_info.total_rating.total_no_of_reviews/10));
+                boundData.reviews(data.reviews);
           boundData.paginator = function(page, no_of_pages) {
             var begin_page = page - 3;
             if (begin_page < 0) {
@@ -28,11 +34,7 @@
             }
             return arr;
 	  };
-          function getPage(page) {
-	    $.get("/api", {'page': page}, function (data) {
-                boundData.page(page);
-                boundData.no_of_pages(Math.ceil(data.business_info.total_rating.total_no_of_reviews/10));
-                boundData.reviews(data.reviews);
+                
 	    });
           }
           $(function () {
