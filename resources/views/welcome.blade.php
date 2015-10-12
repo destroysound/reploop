@@ -14,6 +14,21 @@
                         data.page = page;
                         data.no_of_pages = Math.ceil(data.business_info.total_rating.total_noof_reviews/10)
                         console.log(data);
+                        data.paginator = ko.computed(function() {
+                            var begin_page = page - 3;
+                            if (begin_page < 0) {
+                                begin_page = 0;
+                            }
+                            end_page = begin_page + 6;
+                            if (end_page > data.no_of_pages) {
+                                end_page = data.no_of_pages;
+                            }
+                            var arr = [];
+                            for (var i = begin_page; i < end_page; i++) {
+                                arr.push(i);
+                            }
+                            return arr;
+                        });
                         ko.applyBindings(data);
                     });
                 }
@@ -36,7 +51,7 @@
                 <div class="col-md-12" data-bind="text: description"></div>
            </div>
        </div>
-       <ul class-"pagination" data-bind="foreach: new Array(no_of_pages)">
+       <ul class-"pagination" data-bind="foreach: paginator">
            <li data-bind="text: $index()+1"></li>
        </ul>
        </div>
