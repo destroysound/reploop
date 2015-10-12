@@ -14,19 +14,19 @@
             'reviews': ko.observable([])
           };
           boundData.paginator = function(page, no_of_pages) {
-	    var begin_page = page - 3;
-	    if (begin_page < 0) {
-		begin_page = 0;
-	    }
-	    end_page = begin_page + 6;
-	    if (end_page > no_of_pages) {
-		end_page = no_of_pages;
-	    }
-	    var arr = [];
-	    for (var i = begin_page; i < end_page; i++) {
-		arr.push(i);
-	    }
-	    return arr;
+            var begin_page = page - 3;
+            if (begin_page < 0) {
+              begin_page = 0;
+            }
+            end_page = begin_page + 6;
+            if (end_page > no_of_pages) {
+              end_page = no_of_pages;
+            }
+            var arr = [];
+            for (var i = begin_page; i < end_page; i++) {
+              arr.push(i);
+            }
+            return arr;
 	  };
           function getPage(page) {
 	    $.get("/api", {'page': page}, function (data) {
@@ -56,7 +56,7 @@
                 <div class="col-md-12" data-bind="text: description"></div>
            </div>
        </div>
-       <ul class="pagination" data-bind="foreach: paginator(page, no_of_pages)">
+       <ul class="pagination" data-bind="foreach: $root.paginator($root.page, $root.no_of_pages)">
            <li data-bind="text: $index()+1, click: function (data) { getPage($index+1) }"></li>
        </ul>
        </div>
