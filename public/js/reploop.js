@@ -21,11 +21,11 @@ function getPage(page) {
     boundData.business_info(data.business_info);
     boundData.no_of_pages(Math.ceil(data.business_info.total_rating.total_no_of_reviews/10));
     boundData.reviews(data.reviews);
-    var begin_page = page - 3;
+    var begin_page = page - 2;
     if (begin_page < 0) {
       begin_page = 0;
     }
-    end_page = begin_page + 6;
+    end_page = begin_page + 5;
     if (end_page > boundData.no_of_pages()) {
       end_page = boundData.no_of_pages();
     }
