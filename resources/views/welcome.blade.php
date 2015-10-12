@@ -9,9 +9,9 @@
         <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
         <script type="text/javascript">
           var boundData = {
-            'page': 0,
-            'no_of_pages': 0,
-            'reviews': []
+            'page': ko.observable(0),
+            'no_of_pages': ko.observable(0),
+            'reviews': ko.observable([])
           };
           boundData.paginator = function(page, no_of_pages) {
 	    var begin_page = page - 3;
@@ -30,9 +30,9 @@
 	  };
           function getPage(page) {
 	    $.get("/api", {'page': page}, function (data) {
-                boundData.page = page;
-                boundData.no_of_pages = Math.ceil(data.business_info.total_rating.total_no_of_reviews/10)
-                boundData.reviews = data.reviews;
+                boundData.page(page);
+                boundData.no_of_pages(Math.ceil(data.business_info.total_rating.total_no_of_reviews/10));
+                boundData.reviews(data.reviews);
 	    });
           }
           $(function () {
