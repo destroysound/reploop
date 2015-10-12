@@ -12,29 +12,28 @@
             'page': ko.observable(0),
             'no_of_pages': ko.observable(0),
             'reviews': ko.observable([]),
-            'paginator': function () { return []; }
+            'pages': ko.observable([])
           };
+          boundData.paginator = function(page, no_of_pages) {
+	  };
           function getPage(page) {
-	    $.get("/api", {'page': page}, function (data) {
+            $.get("/api", {'page': page}, function (data) {
                 boundData.page(page);
                 boundData.no_of_pages(Math.ceil(data.business_info.total_rating.total_no_of_reviews/10));
                 boundData.reviews(data.reviews);
-          boundData.paginator = function(page, no_of_pages) {
-            var begin_page = page - 3;
-            if (begin_page < 0) {
-              begin_page = 0;
-            }
-            end_page = begin_page + 6;
-            if (end_page > no_of_pages) {
-              end_page = no_of_pages;
-            }
-            var arr = [];
-            for (var i = begin_page; i < end_page; i++) {
-              arr.push(i);
-            }
-            return arr;
-	  };
-                
+                var begin_page = page - 3;
+                if (begin_page < 0) {
+                  begin_page = 0;
+                }
+                end_page = begin_page + 6;
+                if (end_page > no_of_pages) {
+                  end_page = no_of_pages;
+                }
+                var arr = [];
+                for (var i = begin_page; i < end_page; i++) {
+                  arr.push(i);
+                }
+                boundData.pages(arr);
 	    });
           }
           $(function () {
@@ -58,7 +57,7 @@
                 <div class="col-md-12" data-bind="text: description"></div>
            </div>
        </div>
-       <ul class="pagination" data-bind="foreach: $root.paginator($root.page(), $root.no_of_pages())">
+       <ul class="pagination" data-bind="foreach: pages">
            <li data-bind="text: $index()+1, click: function (data) { getPage($index()+1) }"></li>
        </ul>
        </div>
