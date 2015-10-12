@@ -12,7 +12,7 @@
                 function getPage(page) {
                     $.get("/api", {'page': page}, function (data) {
                         data.page = page;
-                        data.no_of_pages = Math.ceil(data.business_info.total_rating.total_noof_reviews/10)
+                        data.no_of_pages = Math.ceil(data.business_info.total_rating.total_no_of_reviews/10)
                         console.log(data);
                         data.paginator = ko.computed(function() {
                             var begin_page = page - 3;
