@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Reputation Loop API Consumer</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">          <title>Reputation Loop API Consumer</title>
 
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
