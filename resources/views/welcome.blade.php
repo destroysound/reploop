@@ -33,7 +33,9 @@
                 (<span data-bind="text: date_of_submission"></span>)
                 </div>
                 <div class="col-md-2">
-                  <img src="/img/star.png" data-bind="foreach: new Array(parseInt(rating))" />
+                  <div data-bind="foreach: new Array(parseInt(rating))">
+                    <img src="/img/star.png"/>
+                  </div>
                 </div>
            </div>
            <div class="row customer-description">
