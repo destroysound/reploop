@@ -13,12 +13,23 @@
             'no_of_pages': ko.observable(0),
             'reviews': ko.observable([]),
             'pages': ko.observable([])
+            'business_info': ko.observable({
+              'business_address': '',
+              'business_name': '',
+              'business_phone': '',
+              'external_page_url': '',
+              'external_url': '',
+              'total_rating': {
+                'total_avg_rating': ''
+              }
+            })
           };
           boundData.paginator = function(page, no_of_pages) {
 	  };
           function getPage(page) {
             $.get("/api", {'page': page}, function (data) {
                 boundData.page(page);
+                boundData.business_info(data.business_info);
                 boundData.no_of_pages(Math.ceil(data.business_info.total_rating.total_no_of_reviews/10));
                 boundData.reviews(data.reviews);
                 var begin_page = page - 3;
@@ -43,6 +54,13 @@
         </script>
     </head>
     <body>
+       <h1 data-bind="text: business_info.business_name"></h1>
+       <div class="container">
+          <div class="row">
+            <div class="col-md-6" data-bind="html: business_info.business_address"></div>
+            <div class="col-md-6" data-bind="html: business_info.business_phone"></div> 
+          </div>
+       </div>
        <div class="container">
        <div data-bind="foreach: reviews">
            <div class="row">
@@ -54,7 +72,7 @@
                 <div class="col-md-4" data-bind="text: date_of_submission"></div>
            </div>
            <div class="row">
-                <div class="col-md-12" data-bind="text: $('<textarea />').html(description).text()"></div>
+                <div class="col-md-12" data-bind="html: description"></div>
            </div>
        </div>
        <nav>
