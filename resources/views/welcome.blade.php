@@ -12,7 +12,7 @@
             'page': 0,
             'reviews': []
           };
-          boundDta.paginator = ko.computed(function() {
+          boundData.paginator = ko.computed(function() {
 	    var begin_page = page - 3;
 	    if (begin_page < 0) {
 		begin_page = 0;
