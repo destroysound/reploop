@@ -19,9 +19,7 @@ class ReploopApiController extends Controller
        // Calculate offset based on 10 items per page.
        $offset = $request->input('page', 0) * 10;
        $res = $client->request('GET', 'http://test.localfeedbackloop.com/api?apiKey=61067f81f8cf7e4a1f673cd230216112&noOfReviews=10&internal=1&yelp=1&google=1&offset='.$offset.'&threshold=1', []); 
-       $results = (array)json_decode($res->getBody());
-       $results['business_info']['total_rating']['no_of_pages'] =
-           ceil($results['business_info']['total_rating']['no_of_reviews'] / 10);
+       $results = json_decode($res->getBody());
        return response()->json($results);
     }
 
