@@ -9,14 +9,12 @@
     <link href="/css/app.css" rel="stylesheet">
     </head>
     <body>
-       <h1 data-bind="text: business_info.business_name"></h1>
        <div class="container">
+       <h1 data-bind="text: business_info.business_name"></h1>
           <div class="row">
             <div class="col-md-6" data-bind="html: business_info.business_address"></div>
             <div class="col-md-6" data-bind="html: business_info.business_phone"></div> 
           </div>
-       </div>
-       <div class="container">
        <div data-bind="foreach: reviews">
            <div class="row">
                 <div class="col-md-4">Customer Name:</div>
