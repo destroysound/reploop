@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reputation Loop API Consumer</title>
     <!-- Bootstrap -->
-    <link href="/css/app.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
     </head>
     <body>
        <h1 data-bind="text: business_info.business_name"></h1>
