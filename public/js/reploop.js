@@ -3,22 +3,20 @@ var boundData = {
   'no_of_pages': ko.observable(0),
   'reviews': ko.observable([]),
   'pages': ko.observable([]),
-  'business_info': ko.observable({
-    'business_address': '',
-    'business_name': '',
-    'business_phone': '',
-    'external_page_url': '',
-    'external_url': '',
-    'total_rating': {
-      'total_avg_rating': ''
-    }
-  })
+  'business_address': ko.observable(''),
+  'business_name': ko.observable(''),
+  'business_phone': ko.observable(''),
+  'external_url': ko.observable(''),
+  'rating': ko.observable('')
 };
 
 function getPage(page) {
   $.get("/api", {'page': page}, function (data) {
     boundData.page(page);
-    boundData.business_info(data.business_info);
+    boundData.business_address(data.business_info.business_address);
+    boundData.business_name(data.business_info.business_name);
+    boundData.business_phone(data.business_info.business_phone);
+    boundData.external_url(data.business_info.external_url);
     boundData.no_of_pages(Math.ceil(data.business_info.total_rating.total_no_of_reviews/10));
     boundData.reviews(data.reviews);
     var begin_page = page - 2;
