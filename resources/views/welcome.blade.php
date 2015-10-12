@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-2">
                   <div data-bind="foreach: new Array(parseInt(rating))">
-                    <img src="/img/star.png"/>
+                    <img width="24" height="24" src="/img/star.png"/>
                   </div>
                 </div>
            </div>
