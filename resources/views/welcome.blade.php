@@ -9,7 +9,10 @@
     <link href="/css/app.css" rel="stylesheet">
     <style>
       .customer-description {
-        margin-bottom: 5px;
+        margin-bottom: 8px;
+      }
+      .customer-rating {
+        margin-bottom: 8px;
       }
       .customer-name {
         font-weight: bold;
@@ -62,7 +65,7 @@
                 <a data-bind="attr: { href: customer_url}, text: customer_name"></a>
                 (<span data-bind="text: date_of_submission"></span>)
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 customer-rating">
                   <div data-bind="foreach: new Array(parseInt(rating))">
                     <img width="22" height="21" src="/img/star.png"/>
                   </div>
