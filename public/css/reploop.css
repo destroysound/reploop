@@ -1,0 +1,40 @@
+.customer-description {
+  margin-bottom: 8px;
+}
+.customer-name {
+  font-weight: bold;
+  text-decoration: none;
+}
+.customer-source-image {
+  margin-bottom: 8px;
+  margin-right: 10px;
+}
+.business-info {
+  font-size: 24px;
+}
+.business-phone {
+  font-size: 24px;
+  text-align: right;
+}
+.business-rating {
+  font-size: 16px;
+  text-align: right;
+  margin-top: 20px;
+}
+.business-header {
+  margin-bottom: 20px;
+  background: #EEEEEE;
+  border-bottom: 1px solid grey;
+  margin-top: 0px;
+}
+.business-name {
+  display: inline-block;
+  margin-right: 20px;
+}
+.offsite-link {
+  position: relative;
+  top: -12px;
+}
+body { 
+  padding-bottom: 80px; 
+}
