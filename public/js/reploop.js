@@ -10,8 +10,8 @@ var boundData = {
   'rating': ko.observable(''),
   'source_images': {
      0: '/img/local.png',
-     1: '/img/yelp.png',
-     2: '/img/google.png'
+     1: '/img/google.png',
+     2: '/img/yelp.png'
    },
   'no_reviews': ko.observable('')
 };
