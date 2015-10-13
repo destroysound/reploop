@@ -50,8 +50,8 @@
        <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <h1 class="business-name data-bind="text: business_name"></h1>
-              <a data-bind="attr: { href: $root.external_url }"><img src="/img/link.png" />
+              <h1 class="business-name" data-bind="text: business_name"></h1>
+              <a data-bind="attr: { href: $root.external_url }"><img src="/img/link.png" /></a>
             </div>
             <div class="col-md-6 business-rating">
               <div>Avg Rating: <b><span data-bind="text: rating"></span>&nbsp;/&nbsp;5</b></div>
