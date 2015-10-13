@@ -29,7 +29,7 @@
           </div>
        </div>
      </div>
-     <div class="container">'
+     <div class="container">
        <div data-bind="foreach: reviews">
          <div class="row">
            <div class="col-md-10">
