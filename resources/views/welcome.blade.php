@@ -31,6 +31,7 @@
         margin-bottom: 20px;
         background: #EEEEEE;
         border-bottom: 1px solid grey;
+        margin-top: 0px;
       }
     </style>
     </head>
@@ -68,10 +69,12 @@
                 <div class="col-md-12" data-bind="html: description"></div>
            </div>
        </div>
-       <nav>
+       <nav class="navbar navbar-default navbar-fixed-bottom">
+       <div class="container"
        <ul class="pagination" data-bind="foreach: pages">
            <li data-bind="css: {active: $data == $root.page}"><a href="#" data-bind="text: $data+1, click: function (data) { getPage($data) }"></a></li>
        </ul>
+       </div>
        </nav>
        </div>
        <!-- scripts go at bottom of page -->
