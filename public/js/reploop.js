@@ -35,6 +35,9 @@ function getPage(page) {
     if (end_page > boundData.no_of_pages()) {
       end_page = boundData.no_of_pages();
     }
+    if (end_page - begin_page < 5) {
+      begin_page = end_page - 5;
+    }
     var arr = [];
     for (var i = begin_page; i < end_page; i++) {
       arr.push(i);
