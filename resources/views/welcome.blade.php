@@ -73,6 +73,7 @@
        <div data-bind="foreach: reviews">
            <div class="row">
                 <div class="col-md-10 customer-name">
+                <img data-bind="attr: { srd: source_images[review_from] }" />
                 <a data-bind="attr: { href: customer_url }, text: customer_name"></a>
                 (<span data-bind="text: date_of_submission"></span>)
                 </div>

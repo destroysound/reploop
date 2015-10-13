@@ -8,6 +8,11 @@ var boundData = {
   'business_phone': ko.observable(''),
   'external_page_url': ko.observable(''),
   'rating': ko.observable(''),
+  'source_images': {
+     0: 'local.png',
+     1: 'yelp.png',
+     2: 'google.png'
+   },
   'no_reviews': ko.observable('')
 };
 
