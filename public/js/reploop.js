@@ -7,7 +7,7 @@ var boundData = {
   'business_name': ko.observable(''),
   'business_phone': ko.observable(''),
   'external_url': ko.observable(''),
-  'rating': ko.observable('')
+  'rating': ko.observable(''),
   'no_reviews': ko.observable('')
 };
 
