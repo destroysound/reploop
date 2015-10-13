@@ -25,6 +25,7 @@
       .business-rating {
         font-size: 16px;
         text-align: right;
+        margin-top: 10px;
       }
     </style>
     </head>
@@ -32,7 +33,11 @@
        <div class="container">
           <div class="row">
             <div class="col-md-6"><h1 data-bind="text: business_name"></h1></div>
-            <div class="col-md-6 business-rating">Avg Rating: <span data-bind="text: rating"></span>/5</div>
+            <div class="col-md-6 business-rating">
+              <div>Avg Rating: <b><span data-bind="text: rating"></span>&nbsp;/&nbsp;5</b></div>
+              <div>Total Reviews: <span data-bind="text: no_reviews"></span>
+</div>
+            </div>
           </div>
           <div class="row">
             <div class="col-md-6 business-info" data-bind="html: business_address"></div>
