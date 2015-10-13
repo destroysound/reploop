@@ -30,6 +30,7 @@
     </style>
     </head>
     <body>
+       <div class=page-header">
        <div class="container">
           <div class="row">
             <div class="col-md-6"><h1 data-bind="text: business_name"></h1></div>
@@ -44,7 +45,7 @@
             <div class="col-md-6 business-phone" data-bind="html: business_phone"></div> 
           </div>
        </div>
-       <hr />
+       </div>
        <div class="container">
        <div data-bind="foreach: reviews">
            <div class="row">
