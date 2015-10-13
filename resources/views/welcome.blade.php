@@ -17,6 +17,7 @@
       }
       .business-info {
         font-size: 24px;
+        margin-bottom: 20px;
       }
       .business-phone {
         font-size: 24px;
@@ -32,6 +33,7 @@
             <div class="col-md-6 business-phone" data-bind="html: business_phone"></div> 
           </div>
        </div>
+       <hr />
        <div class="container">
        <div data-bind="foreach: reviews">
            <div class="row">
