@@ -32,7 +32,8 @@
        <div class="container">
           <div class="row">
             <div class="col-md-6"><h1 data-bind="text: business_name"></h1></div>
-            <div class="col-md-6 business-rating">Avg Rating: <div data-bind="text: rating"></div>/5</div>
+            <div class="col-md-6 business-rating">Avg Rating: <span data-bind="text: rating"></span>/5</div>
+          </div>
           <div class="row">
             <div class="col-md-6 business-info" data-bind="html: business_address"></div>
             <div class="col-md-6 business-phone" data-bind="html: business_phone"></div> 
