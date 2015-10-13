@@ -33,6 +33,9 @@
         border-bottom: 1px solid grey;
         margin-top: 0px;
       }
+      body { 
+        padding-bottom: 70px; 
+      }
     </style>
     </head>
     <body>
