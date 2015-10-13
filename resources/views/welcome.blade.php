@@ -15,14 +15,21 @@
         font-weight: bold;
         text-decoration: none;
       }
+      .business-info {
+        font-size: 24px;
+      }
+      .business-phone {
+        font-size: 24px;
+        text-align: right;
+      }
     </style>
     </head>
     <body>
        <div class="container">
        <h1 data-bind="text: business_name"></h1>
           <div class="row">
-            <div class="col-md-6"><h3 data-bind="html: business_address"></h3></div>
-            <div class="col-md-6"><h3 data-bind="html: business_phone"></h3></div> 
+            <div class="col-md-6 business-info" data-bind="html: business_address"></div>
+            <div class="col-md-6 business-phone" data-bind="html: business_phone"></div> 
           </div>
        </div>
        <div class="container">
