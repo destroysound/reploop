@@ -27,6 +27,11 @@
         text-align: right;
         margin-top: 10px;
       }
+      .page-top {
+        margin-bottom: 20px;
+        background: #EEEEEE;
+        border-bottom: 1px solid grey;
+      }
     </style>
     </head>
     <body>
