@@ -8,6 +8,7 @@ var boundData = {
   'business_phone': ko.observable(''),
   'external_url': ko.observable(''),
   'rating': ko.observable('')
+  'no_reviews': ko.observable('')
 };
 
 function getPage(page) {
@@ -17,6 +18,8 @@ function getPage(page) {
     boundData.business_name(data.business_info.business_name);
     boundData.business_phone(data.business_info.business_phone);
     boundData.external_url(data.business_info.external_url);
+    boundData.rating(data.business_info.total_rating.total_avg_rating);
+    boundData.no_reviews(data.business_info.total_rating.total_no_of_reviews);
     boundData.no_of_pages(Math.ceil(data.business_info.total_rating.total_no_of_reviews/10));
     boundData.reviews(data.reviews);
     var begin_page = page - 2;
