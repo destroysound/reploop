@@ -70,7 +70,7 @@
            </div>
        </div>
        <nav class="navbar navbar-default navbar-fixed-bottom">
-       <div class="container"
+       <div class="container">
        <ul class="pagination" data-bind="foreach: pages">
            <li data-bind="css: {active: $data == $root.page}"><a href="#" data-bind="text: $data+1, click: function (data) { getPage($data) }"></a></li>
        </ul>
