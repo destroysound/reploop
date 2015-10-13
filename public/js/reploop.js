@@ -9,9 +9,9 @@ var boundData = {
   'external_page_url': ko.observable(''),
   'rating': ko.observable(''),
   'source_images': {
-     0: 'local.png',
-     1: 'yelp.png',
-     2: 'google.png'
+     0: '/img/local.png',
+     1: '/img/yelp.png',
+     2: '/img/google.png'
    },
   'no_reviews': ko.observable('')
 };
