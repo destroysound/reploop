@@ -34,7 +34,7 @@
         margin-top: 0px;
       }
       body { 
-        padding-bottom: 70px; 
+        padding-bottom: 80px; 
       }
     </style>
     </head>
