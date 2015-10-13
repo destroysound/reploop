@@ -27,7 +27,7 @@
         text-align: right;
         margin-top: 10px;
       }
-      .page-top {
+      .business-header {
         margin-bottom: 20px;
         background: #EEEEEE;
         border-bottom: 1px solid grey;
@@ -35,7 +35,7 @@
     </style>
     </head>
     <body>
-       <div class=page-header">
+       <div class="page-header business-header">
        <div class="container">
           <div class="row">
             <div class="col-md-6"><h1 data-bind="text: business_name"></h1></div>
