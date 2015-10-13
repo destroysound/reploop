@@ -11,12 +11,13 @@
       .customer-description {
         margin-bottom: 8px;
       }
-      .customer-rating {
-        margin-bottom: 8px;
-      }
       .customer-name {
         font-weight: bold;
         text-decoration: none;
+      }
+      .customer-source-image {
+        margin-bottom: 8px;
+        margin-right: 10px;
       }
       .business-info {
         font-size: 24px;
@@ -72,9 +73,9 @@
        <div class="container">
        <div data-bind="foreach: reviews">
            <div class="row">
-                <div class="col-md-10 customer-name">
-                <img data-bind="attr: { src: $root.source_images[review_from] }" />
-                <a data-bind="attr: { href: customer_url }, text: customer_name"></a>
+                <div class="col-md-10">
+                <img class="customer-source-image" data-bind="attr: { src: $root.source_images[review_from] }" />
+                <a class="customer-name" data-bind="attr: { href: customer_url }, text: customer_name"></a>
                 (<span data-bind="text: date_of_submission"></span>)
                 </div>
                 <div class="col-md-2 customer-rating">
